@@ -11,36 +11,36 @@
 -- Eingrenzen/Filtern WHERE & AND/OR etc.
 -- Scharfe Suche
 /**/
-SELECT
-	ticker AS "SYM",
-    c_name AS "Unternehmen",
-	price AS "Kurs ($)",
-    payouts AS "Zahlung p.a.",
-    dividend AS "Dividende",
-	CONCAT(sector, " | ", industry) AS "Operations"
-FROM stocks.ccc
+# SELECT
+# 	ticker AS "SYM",
+#     c_name AS "Unternehmen",
+# 	price AS "Kurs ($)",
+#     payouts AS "Zahlung p.a.",
+#     dividend AS "Dividende",
+# 	CONCAT(sector, " | ", industry) AS "Operations"
+# FROM stocks.ccc
 
--- Einzeldaten / Strings
-#WHERE sector = "Communication Services" -- spez. Sektor
-#WHERE industry = "Media" -- spez. Branche
-# WHERE payouts = 12 -- Wer zahlt monatlich?
+# -- Einzeldaten / Strings
+# #WHERE sector = "Communication Services" -- spez. Sektor
+# #WHERE industry = "Media" -- spez. Branche
+# # WHERE payouts = 12 -- Wer zahlt monatlich?
 
--- Kombination durch AND
-WHERE sector = "Communication Services" AND industry = "Entertainment"
-#WHERE sector = "Communication Services" AND payouts = 12
+# -- Kombination durch AND
+# WHERE sector = "Communication Services" AND industry = "Entertainment"
+# #WHERE sector = "Communication Services" AND payouts = 12
 
--- Kombination durch AND / OR
-# WHERE sector = "Communication Services" AND (industry = "Entertainment" OR industry = "Media")
+# -- Kombination durch AND / OR
+# # WHERE sector = "Communication Services" AND (industry = "Entertainment" OR industry = "Media")
 
--- Kombination durch AND / NOT
-# WHERE sector = "Communication Services" AND NOT industry = "Media"
+# -- Kombination durch AND / NOT
+# # WHERE sector = "Communication Services" AND NOT industry = "Media"
 
--- Sortierung
-ORDER BY industry DESC 
-#ORDER BY price DESC 
--- Begrenzung
-LIMIT 40
-;
+# -- Sortierung
+# ORDER BY industry DESC 
+# #ORDER BY price DESC 
+# -- Begrenzung
+# LIMIT 40
+# ;
 
 
 -- Eingrenzen/Filtern WHERE & LIKE + Parameter
@@ -57,7 +57,7 @@ FROM stocks.ccc
 
 -- unschärfere Suchen --
 -- Branchenname beginnt mit ... , dahinter beliebige Chars
-#WHERE industry LIKE "Air%"
+# WHERE industry LIKE "Air%"
 -- Branchenname endet mit ... , davor beliebige Chars
 #WHERE industry LIKE "%ment"
 -- Branchenname enthaelt ...
@@ -104,7 +104,7 @@ FROM stocks.ccc
 WHERE c_name RLIKE "^[1-9]"  -- mit Ziffer beginnend
 ORDER BY c_name;
 */
-/*
+
 -- Eingrenzen/Filtern WHERE & BETWEEN / NOT BETWEEN
 SELECT 
     ticker AS "SYM",
